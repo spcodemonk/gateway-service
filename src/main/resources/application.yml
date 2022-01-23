@@ -1,0 +1,20 @@
+server:
+   port: 8787
+
+eureka:
+       client:
+           serviceUrl:
+                defaultZone: http://localhost:8761/eureka
+                instance:
+                preferIpAddress: true
+                     
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+      gateway:
+         routes:
+          - id: employee-service
+            uri: lb://EMPLOYEE-SERVICE
+            predicates:
+                   -  Path=/emp/allEmps/**
