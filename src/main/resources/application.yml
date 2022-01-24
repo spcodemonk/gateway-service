@@ -18,3 +18,7 @@ spring:
             uri: lb://EMPLOYEE-SERVICE
             predicates:
                    -  Path=/emp/allEmps/**
+          - id: hrms-service
+            uri: lb://HRMS-SERVICE
+            predicates:
+                  - Path=/hrms/**          
